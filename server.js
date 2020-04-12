@@ -33,8 +33,8 @@ mongoose.connect(dbkeys, { useNewUrlParser: true, useUnifiedTopology: true, useC
 
 
 
-// const users = require("./routes/api/users")
-// app.use("/api/users/", users);
+const users = require("./routes/api/users")
+app.use("/api/users/", users);
 
 
 app.listen(port, () => {
