@@ -19,16 +19,16 @@ app.use(express.urlencoded({
     extended: false
 }))
 
-// require('./config/passport')
-// app.use(passport.initialize())
-//
-//
-//
-// const dbkeys =require("./config/keys").ATLAS_URI
-// mongoose.connect(dbkeys, { useNewUrlParser: true, useUnifiedTopology: true, useCreateIndex: true })
-//  .then(() => console.log("MongoDB database connection established successfully"))
-//  .catch(err => console.log(err))
-//
+require('./config/passport')
+app.use(passport.initialize())
+
+
+
+const dbkeys =require("./config/keys").ATLAS_URI
+mongoose.connect(dbkeys, { useNewUrlParser: true, useUnifiedTopology: true, useCreateIndex: true })
+ .then(() => console.log("MongoDB database connection established successfully"))
+ .catch(err => console.log(err))
+
 
 
 
