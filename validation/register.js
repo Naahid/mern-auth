@@ -13,23 +13,23 @@ module.exports = function validateRegisterInput(data){
     
     // Name checks 
     if(Validator.isEmpty(data.name)) {
-        errors.name = "Name field is required";
+        errors.name = "Please Provide your name";
     }
 
     // Email checks 
     if (Validator.isEmpty(data.email)) {
-        errors.email = "Email field is required "
+        errors.email = "Please Provide your email "
     } else if (!Validator.isEmail(data.email)) {
-        errors.email = "Email is invalid"
+        errors.email = "Email is not valid"
     }
 
     // Password checks 
     if (Validator.isEmpty(data.password)) {
-        errors.password = "Password field is required";
+        errors.password = "Please Provide your password";
     }
 
     if (Validator.isEmpty(data.password2)) {
-        errors.password2 = "Confirm password field is required";
+        errors.password2 = "Confirm your password ";
     }
 
     if (!Validator.isLength(data.password, { min: 6, max: 30 })) {
@@ -37,7 +37,7 @@ module.exports = function validateRegisterInput(data){
     }
 
     if (!Validator.equals(data.password, data.password2)) {
-        errors.password2 = "Passwords must match"
+        errors.password2 = "Passwords must be match"
     }
 
     return {
